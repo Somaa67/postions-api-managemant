@@ -1,0 +1,23 @@
+const express = require("express");
+const { eq } = require("drizzle-orm");
+
+const db= require("../db/db");
+const { potions } = require("../db/schema");
+
+const router = express.Router();
+
+router.get("/", async (req, res)=>{
+    try{
+        const allpotions = await db.select().from(potions)
+        return res.status(200).json(allpotions)
+    }
+    catch(err){
+        return res.status(500).json({
+            succes: false,
+            message: "Iternal server error"
+        })
+    }
+
+})
+
+module.exports = router;

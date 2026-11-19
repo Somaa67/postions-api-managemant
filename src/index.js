@@ -12,7 +12,7 @@ app.use(express.json());
 // Routes
 app.use("/api/users", usersRouter);
 
-app.get("/api/potions ", potionsRouter)
+app.use("/api/potions", potionsRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

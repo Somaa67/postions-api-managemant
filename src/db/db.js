@@ -4,7 +4,7 @@ const schema = require("./schema");
 
 if (!process.env.DATABASE_URL) {
   console.warn(
-    "[WARN] DATABASE_URL is not defined in environment variables. Please check your .env file."
+    "[WARN] DATABASE_URL is not defined in environment variables. Please check your .env file.",
   );
 }
 
